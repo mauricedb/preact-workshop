@@ -1,0 +1,10 @@
+.movieCard {
+  min-width: 250px;
+  max-width: 250px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.genreBadge {
+  margin-right: 3px;
+}
