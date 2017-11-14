@@ -1,10 +1,11 @@
-import { h, Component } from "preact";
-import MoviesPresentation from "./movies-presentation";
+import { h, Component } from 'preact';
+import MoviesObserver from './movies-observer';
 
-class MoviesContainer extends Component {
+export default class MoviesContainer extends Component {
   state = {
     movies: []
   };
+
 
   componentDidMount() {
     fetch("/api/movies.json")
@@ -13,8 +14,6 @@ class MoviesContainer extends Component {
   }
 
   render({}, { movies }) {
-    return <MoviesPresentation movies={movies} />;
+    return <MoviesObserver movies={movies} />;
   }
 }
-
-export default MoviesContainer;
