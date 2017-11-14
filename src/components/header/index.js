@@ -1,17 +1,22 @@
-import { h, Component } from 'preact';
-import { Link } from 'preact-router/match';
-import style from './style';
+import { h } from "preact";
+import { Link } from "preact-router/match";
 
-export default class Header extends Component {
-	render() {
-		return (
-			<header class={style.header}>
-				<h1>Preact App</h1>
-				<nav>
-					<Link activeClassName={style.active} href="/">Home</Link>
-					<Link activeClassName={style.active} href="/movies">Movies</Link>
-				</nav>
-			</header>
-		);
-	}
-}
+export default () => (
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <Link class="navbar-brand" href="/">
+      The MovieDB
+    </Link>
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <Link class="nav-link" activeClassName="active" href="/">
+          Home
+        </Link>
+      </li>
+      <li class="nav-item">
+        <Link class="nav-link" activeClassName="active" href="/movies">
+          Movies
+        </Link>
+      </li>
+    </ul>
+  </nav>
+);
