@@ -11,13 +11,12 @@
     "lint": "eslint src"
   },
   "eslintConfig": {
-    "extends": "eslint-config-synacor"
+    "extends": ["eslint-config-synacor", "prettier"]
   },
-  "eslintIgnore": [
-    "build/*"
-  ],
+  "eslintIgnore": ["build/*"],
   "devDependencies": {
     "eslint": "^4.5.0",
+    "eslint-config-prettier": "^2.7.0",
     "eslint-config-synacor": "^1.1.0",
     "if-env": "^1.0.0",
     "preact-cli": "^2.0.0"
