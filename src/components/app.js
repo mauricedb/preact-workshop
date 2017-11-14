@@ -4,6 +4,7 @@ import { Router } from "preact-router";
 import Header from "./header";
 import Home from "../routes/home";
 import Movies from "../routes/movies";
+import Movie from "../routes/movie";
 
 export default class App extends Component {
   /** Gets fired when the route changes.
@@ -21,6 +22,7 @@ export default class App extends Component {
         <Router onChange={this.handleRoute}>
           <Home path="/" />
           <Movies path="/movies" />
+          <Movie path="/movie/:id" />
         </Router>
       </div>
     );
