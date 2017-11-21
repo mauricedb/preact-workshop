@@ -27,7 +27,7 @@ export default class Movie extends Component {
               ? movie.image
               : "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8Xw8AAoMBgDTD2qgAAAAASUVORK5CYII="
           }
-          alt="Card image cap"
+          alt={movie.title}
           height="140"
         />
         <div class="card-body">
