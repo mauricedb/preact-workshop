@@ -2,7 +2,7 @@ import { h } from "preact";
 import { Link } from "preact-router/match";
 
 export default () => (
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <nav class="navbar navbar-expand navbar-dark bg-dark">
     <Link class="navbar-brand" href="/">
       The MovieDB
     </Link>
