@@ -7,10 +7,16 @@ export default class MoviesContainer extends Component {
   };
 
 
-  componentDidMount() {
-    fetch("/api/movies.json")
-      .then(rsp => rsp.json())
-      .then(movies => this.setState({ movies }));
+  // componentDidMount() {
+  //   fetch("/api/movies.json")
+  //     .then(rsp => rsp.json())
+  //     .then(movies => this.setState({ movies }));
+  // }
+
+  async componentDidMount() {
+    const rsp = await fetch('/api/movies.json');
+    const movies = await rsp.json();
+    this.setState({ movies });
   }
 
   render({}, { movies }) {

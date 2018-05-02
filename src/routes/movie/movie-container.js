@@ -1,5 +1,5 @@
-import { h, Component } from "preact";
-import MoviePresentation from "./movie-presentation";
+import { h, Component } from 'preact';
+import MoviePresentation from './movie-presentation';
 
 export default class MovieContainer extends Component {
   state = { movie: null };
@@ -11,16 +11,25 @@ export default class MovieContainer extends Component {
   };
 
   onSave = () => {
-    alert("Saving " + this.state.movie.title);
+    alert('Saving ' + this.state.movie.title);
   };
 
-  componentDidMount() {
+  // componentDidMount() {
+  //   const id = +this.props.id;
+
+  //   fetch("/api/movies.json")
+  //     .then(rsp => rsp.json())
+  //     .then(movies => movies.find(m => m.id === id))
+  //     .then(movie => this.setState({ movie }));
+  // }
+
+  async componentDidMount() {
     const id = +this.props.id;
 
-    fetch("/api/movies.json")
-      .then(rsp => rsp.json())
-      .then(movies => movies.find(m => m.id === id))
-      .then(movie => this.setState({ movie }));
+    const rsp = await fetch('/api/movies.json');
+    const movies = await rsp.json();
+    const movie = movies.find(m => m.id === id);
+    this.setState({ movie });
   }
 
   render(props, { movie }) {
